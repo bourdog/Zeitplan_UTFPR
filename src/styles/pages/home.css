@@ -1,0 +1,61 @@
+#mainContainerContents {
+    height: 100vh;
+    margin: 1rem auto;
+    padding: 3rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.reminders {
+    margin: 1rem;
+    width: 100%;
+    border-bottom: 1px solid rgb(209, 209, 209);
+    font-size: 1.5rem;
+    color: #6c757d;
+}
+
+.mainCards {
+    width: 16rem;
+    height: auto;
+    margin: 1rem;
+    background-color: #afafaf80 !important;
+    position: relative;
+}
+
+.mainCards p {
+    font-size: 12px;
+}
+
+.mainCards button {
+   position: relative;
+   top: 1rem;
+}
+
+
+.checkboxDivDone {
+    display: flex;
+    align-items: center;
+}
+
+#containerDateDone1 small{
+    border-bottom: 3px solid red;
+    text-decoration:line-through;    
+}
+
+#containerDateDone2 small{
+    border-bottom: 3px solid rgb(0, 255, 0);
+}
+
+#containerDateDone {
+    margin-top: 3rem !important;
+}
+
+#labelReminderDone {
+    font-size: small;
+    font-weight: bold;
+    margin-bottom: 0 !important;
+}
+
+.reminderDone {
+    margin-left: 0.5rem;
+}
