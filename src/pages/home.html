@@ -34,22 +34,27 @@
     <main>
       <div class="container d-flex justify-content-between reminders">
         Lembretes
-      <form class="form-inline formSearch" action="#">
-        <div class="d-flex align-items-start">
-          <div class="form-group mb-2">
-            <label for="inputSearch" class="sr-only"></label>
-            <input type="search" class="form-control" id="inputSearch" placeholder="Buscar por data" name="date" onkeypress="searchDate(this)" maxlength="10">
+        <form class="form-inline formSearch" action="#">
+          <div class="d-flex align-items-start">
+            <div class="form-group mb-2">
+              <label for="inputSearch" class="sr-only"></label>
+              <input type="search" class="form-control" id="inputSearch" placeholder="Buscar por data" name="date" onkeypress="searchDate(this)" maxlength="10">
+            </div>
+            <button type="submit" class="btn btn-secondary ml-2">
+              <i class="bi bi-search"></i>
+            </button>
           </div>
-          <button type="submit" class="btn btn-secondary ml-2">
-            <i class="bi bi-search"></i>
-          </button>
-        </div>
-      </form>
+        </form>
       </div>
-      <div class="container d-flex" id="mainContainerContents">
+      <div class="container d-flex justify-content-end buttonCriar">
+        <a href="" class="btn btn-primary btn-custon btn-lg">
+          <i class="bi bi-calendar-plus"> Criar</i>
+        </a>
+      </div>
+      <div class="d-flex flex-wrap justify-content-center id="mainContainerContents">
         <div class="card mainCards">
           <div class="card-header checkboxDivDone d-flex justify-content-start">
-            <label for="priorityCard" id="labelCheckbox">Prioritário:</label>
+            <label for="priorityCard" class="labelCheckbox">Prioritário:</label>
             <input type="checkbox" name="priorityCard" class="checkboxHome" onchange="priorityCard()">              
           </div>
           <div class="card-body" id="mobileView">
@@ -59,7 +64,7 @@
             <div class="d-flex justify-content-between mb-3" id="containerDateDone1">
               <small><strong>Data:</strong> 16/03/2021 - 19h00</small>
               <div class="checkboxDivDone">
-                <label for="reminderDone" id="labelCheckbox">Feito:</label>
+                <label for="reminderDone" class="labelCheckbox">Feito:</label>
                 <input type="checkbox" disabled name="isDone" id="reminderDone" class="checkboxHome">              
               </div>
             </div>
@@ -73,7 +78,7 @@
         </div>
         <div class="card mainCards">
           <div class="card-header checkboxDivDone d-flex justify-content-start">
-            <label for="priorityCard" id="labelCheckbox">Prioritário:</label>
+            <label for="priorityCard" class="labelCheckbox">Prioritário:</label>
             <input type="checkbox" checked name="priorityCard" id="" class="checkboxHome" onchange="priorityCard()">              
           </div>
           <div class="card-body" id="mobileView">
@@ -83,7 +88,7 @@
             <div class="d-flex justify-content-between mb-3" id="containerDateDone2">
               <small><strong>Data:</strong> 28/03/2021 - 13h30</small>
               <div class="checkboxDivDone">
-                <label for="reminderDone2" id="labelCheckbox">Feito:</label>
+                <label for="reminderDone2" class="labelCheckbox">Feito:</label>
                 <input type="checkbox" checked name="isDone" id="reminderDone2" class="checkboxHome">              
               </div>
             </div>
@@ -97,7 +102,7 @@
         </div>
         <div class="card mainCards">
           <div class="card-header checkboxDivDone d-flex justify-content-start">
-            <label for="priorityCard" id="labelCheckbox">Prioritário:</label>
+            <label for="priorityCard" class="labelCheckbox">Prioritário:</label>
             <input type="checkbox" name="priorityCard" id="" class="checkboxHome" onchange="priorityCard()">              
           </div>
           <div class="card-body" id="mobileView">
@@ -107,7 +112,7 @@
             <div class="d-flex justify-content-between mb-3">
               <small><strong>Data:</strong> 02/04/2021 - 23h59</small>
               <div class="checkboxDivDone">
-                <label for="reminderDone3" id="labelCheckbox">Feito:</label>
+                <label for="reminderDone3" class="labelCheckbox">Feito:</label>
                 <input type="checkbox" name="isDone" id="reminderDone3" class="checkboxHome">              
               </div>
             </div>
