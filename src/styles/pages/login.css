@@ -1,3 +1,19 @@
+@media only screen and (max-width: 450px) {
+    body {
+        font-size: smaller !important;
+    }
+    .box {
+        width: 14rem;
+        margin-top: 4rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .box input[type="text"],
+    .box input[type="password"] {
+        width: 8rem;
+    }
+  }
+  
 .box {
     width: 23rem;
     position: relative;
@@ -62,19 +78,3 @@
 .create {
     text-decoration: underline
 }
-
-@media only screen and (max-width: 450px) {
-    body {
-        font-size: smaller !important;
-    }
-    .box {
-        width: 14rem;
-        margin-top: 4rem;
-        padding: 1rem 1.5rem;
-    }
-
-    .box input[type="text"],
-    .box input[type="password"] {
-        width: 8rem;
-    }
-  }

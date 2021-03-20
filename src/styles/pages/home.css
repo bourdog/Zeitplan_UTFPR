@@ -1,3 +1,22 @@
+@media only screen and (max-width: 450px) {
+    #mobileView h5, h6, p{
+        font-size: smaller !important;
+    }
+    .reminders {
+        font-size: 1rem !important;
+    }
+    .mainCards {
+        width: 200px !important;
+        flex-shrink: 0;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .mainCards {
+        width: 170px !important;
+    }
+}
+
 #mainContainerContents {
     height: 100vh;
     margin: 1rem auto;
@@ -7,6 +26,7 @@
 }
 
 .reminders {
+    align-items: flex-end;
     margin: 1rem;
     width: 100%;
     border-bottom: 1px solid rgb(209, 209, 209);
@@ -20,21 +40,17 @@
     margin: 1rem;
     background-color: #afafaf80 !important;
     position: relative;
+    box-shadow: 3px 10px 10px -1px rgba(0,0,0,0.75);
 }
 
 .mainCards p {
     font-size: 12px;
 }
 
-.mainCards button {
-   position: relative;
-   top: 1rem;
-}
-
-
 .checkboxDivDone {
     display: flex;
     align-items: center;
+    transition: background-image .9s;
 }
 
 #containerDateDone1 small{
@@ -50,12 +66,20 @@
     margin-top: 3rem !important;
 }
 
-#labelReminderDone {
+#labelCheckbox {
     font-size: small;
     font-weight: bold;
     margin-bottom: 0 !important;
 }
 
-.reminderDone {
+.checkboxHome {
     margin-left: 0.5rem;
+}
+
+.priorityCard {
+    color: white;
+    background-image: linear-gradient(
+        to bottom, red, rgb(170, 0, 0)
+    ) !important;
+    transition: all .3s;
 }
