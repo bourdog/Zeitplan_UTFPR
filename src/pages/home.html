@@ -9,11 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Source+Sans+Pro&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="../scripts/pages/home.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <title>Home | Zeitplan</title>
 </head>
-<body onload="priorityCard()">
+<body onload="priorityCard(), isDone()">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbarLogin">
             <div class="container">
@@ -23,9 +25,9 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-link" href="./login.html">Login</a>
-                  <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
-                  <a class="nav-link" href="./cards.html">Cards</a>
+                  <a class="nav-link active" aria-current="page" href="./home.html">João</a>
+                  <a class="nav-link" href="./profile.html">Profile</a>
+                  <a class="nav-link" href="./login.html">Sign out</a>
                 </div>
               </div>
             </div>
@@ -34,44 +36,43 @@
     <main>
       <div class="container d-flex justify-content-between reminders">
         Lembretes
-        <form class="form-inline formSearch" action="#">
+        <form class="form-inline formSearch" action="#" id="inputSearch">
           <div class="d-flex align-items-start">
             <div class="form-group mb-2">
-              <label for="inputSearch" class="sr-only"></label>
-              <input type="search" class="form-control" id="inputSearch" placeholder="Buscar por data" name="date" onkeypress="searchDate(this)" maxlength="10">
+              <input type="search" class="form-control" placeholder="Buscar por data" name="date" onkeypress="searchDate(this)" maxlength="10" required>
             </div>
-            <button type="submit" class="btn btn-secondary ml-2">
+            <button type="submit" class="btn btn-secondary ml-2" form="inputSearch">
               <i class="bi bi-search"></i>
             </button>
           </div>
         </form>
       </div>
       <div class="container d-flex justify-content-end buttonCriar">
-        <a href="" class="btn btn-primary btn-custon btn-lg">
+        <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#createModal">
           <i class="bi bi-calendar-plus"> Criar</i>
-        </a>
+        </button>
       </div>
       <div class="d-flex flex-wrap justify-content-center id="mainContainerContents">
         <div class="card mainCards">
           <div class="card-header checkboxDivDone d-flex justify-content-start">
             <label for="priorityCard" class="labelCheckbox">Prioritário:</label>
-            <input type="checkbox" name="priorityCard" class="checkboxHome" onchange="priorityCard()">              
+            <input type="checkbox" name="priorityCard" class="form-switch checkboxHome" onchange="priorityCard()">              
           </div>
           <div class="card-body" id="mobileView">
             <h5 class="card-title mb-3"><strong>Estudar ReactJS</strong></h5>
             <h6 class="card-subtitle mb-3 text-muted">Componentes e propriedades</h6>
             <p class="card-text"><a href="https://pt-br.reactjs.org/docs/components-and-props.html">https://pt-br.reactjs.org/docs/components-and-props.html</a></p>
             <div class="d-flex justify-content-between mb-3" id="containerDateDone1">
-              <small><strong>Data:</strong> 16/03/2021 - 19h00</small>
+              <small class="isDone"><strong>Data:</strong> 16/03/2021 - 19h00</small>
               <div class="checkboxDivDone">
                 <label for="reminderDone" class="labelCheckbox">Feito:</label>
-                <input type="checkbox" disabled name="isDone" id="reminderDone" class="checkboxHome">              
+                <input type="checkbox" disabled name="isDone" id="reminderDone" class="checkboxHome"> 
               </div>
             </div>
             <div class="card-footer">
               <div class="d-flex justify-content-between">
                 <button type="button" class="btn btn-danger btn-sm">Excluir</button>
-                <button type="button" class="btn btn-primary btn-sm">Editar</button>
+                <button type="button" class="btn btn-primary btn-sm" disabled>Editar</button>
               </div>
             </div>
           </div>
@@ -86,10 +87,10 @@
             <h6 class="card-subtitle mb-3 text-muted">Modelo conceitual e lógico</h6>
             <p class="card-text mb-4"><a href="https://www.devmedia.com.br/conceitos-fundamentais-de-banco-de-dados/1649">https://www.devmedia.com.br/conceitos-fundamentais-de-banco-de-dados/1649</a><br>Olhar o moodle também!!!</p>
             <div class="d-flex justify-content-between mb-3" id="containerDateDone2">
-              <small><strong>Data:</strong> 28/03/2021 - 13h30</small>
+              <small class="isDone"><strong>Data:</strong> 28/03/2021 - 13h30</small>
               <div class="checkboxDivDone">
                 <label for="reminderDone2" class="labelCheckbox">Feito:</label>
-                <input type="checkbox" checked name="isDone" id="reminderDone2" class="checkboxHome">              
+                <input type="checkbox" checked name="isDone" id="reminderDone2" class="checkboxHome" onchange="isDone()">              
               </div>
             </div>
             <div class="card-footer">
@@ -110,10 +111,10 @@
             <h6 class="card-subtitle mb-3 text-muted">15 exercícios</h6>
             <p class="card-text mb-4">No moodle tem vídeo-aula explicando os exercícios.<br>João mandou a lista dele para comparar</p>
             <div class="d-flex justify-content-between mb-3">
-              <small><strong>Data:</strong> 02/04/2021 - 23h59</small>
+              <small class="isDone"><strong>Data:</strong> 02/04/2021 - 23h59</small>
               <div class="checkboxDivDone">
                 <label for="reminderDone3" class="labelCheckbox">Feito:</label>
-                <input type="checkbox" name="isDone" id="reminderDone3" class="checkboxHome">              
+                <input type="checkbox" name="isDone" id="reminderDone3" class="checkboxHome" onchange="isDone()">              
               </div>
             </div>
             <div class="card-footer">
@@ -126,5 +127,45 @@
         </div>
       </div>
     </main>
+    <!-- Modal -->
+    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" id="contentModal">
+          <div class="modal-header" id="headerModal">
+            <h5 class="modal-title h1" id="createModalLabel">Criar lembrete</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" id="closerButton">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="mainModal">
+            <div class="container d-flex justify-content-center">
+              <form action="#" id="formCreateModal">
+                <p><strong>Título:</strong></p>
+                <input class="form-control mb-2 clear" type="text" placeholder="Reunião" required>
+                <p><strong>Subtítulo:</strong></p>
+                <input class="form-control mb-2 clear" type="text" placeholder="Contratar estágiarios" required>
+                <p><strong>Descrição:</strong></p>
+                <textarea class="form-control mb-2 clear" placeholder="Analisar cúrriculos, etc..." required></textarea>
+                <p><strong>Dia:</strong></p>
+                <input class="form-control mb-2 clear" type="date" name="dateCreateCard" onclick="controlDateField()" required>
+                <p><strong>Hora:</strong></p>
+                <input class="form-control mb-2 clear" type="time" required>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              <i class="bi bi-x-circle buttonNotItalic"> Fechar</i>            </button>
+            <button type="button" class="btn btn-danger" onclick="clearInputModal()">
+              <i class="bi bi-eraser-fill buttonNotItalic"> Limpar</i>
+            </button>
+            <button type="submit" class="btn btn-success" form="formCreateModal">
+              <i class="bi bi-check-circle buttonNotItalic"> Salvar</i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Modal -->
 </body>
 </html>

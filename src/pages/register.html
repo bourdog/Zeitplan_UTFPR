@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/pages/register.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Source+Sans+Pro&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <title>Sign up | Zeitplan</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-dark" id="navbarLogin">
+            <div class="container">
+                <a class="navbar-brand h1 mb-0" id="navbarLogo" href="../pages/home.html">Zeitplan</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="./register.html">Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="container d-flex justify-content-between titlePage">
+                Cadastrar
+            </div>
+        </section>
+        <section>
+            <div class="container d-flex justify-content-center">
+                <form action="#" class="container d-flex justify-content-center formProfile" id="formRegister">
+                    <div class="container">
+                        <p><strong>Nome:</strong></p>
+                        <input class="form-control mb-2" type="text" placeholder="Seu nome" required>
+                        <p><strong>Sobrenome:</strong></p>
+                        <input class="form-control mb-2" type="text" placeholder="Seu sobrenome" required>
+                        <p><strong>Data de nascimento:</strong></p>
+                        <input class="form-control mb-2" type="date" required>
+                    </div>
+                    <div class="container">
+                        <p><strong>E-mail:</strong></p>
+                        <input class="form-control mb-2" type="text" placeholder="Seu e-mail" required>
+                        <p><strong>Senha:</strong></p>
+                        <input class="form-control mb-2" type="password" placeholder="********" required>
+                        <p><strong>Confirmar senha:</strong></p>
+                        <input class="form-control mb-2" type="password" placeholder="********" required>
+                    </div>                    
+                </form>                
+            </div>
+            <div class="container d-flex justify-content-end">
+                <a href="../pages/login.html">
+                    <button type="button" class="btn btn-dark btn-lg mt-4 mr-4">
+                        <i class="bi bi-backspace buttonNotItalic"> Voltar</i>
+                    </button>
+                </a>                
+                <button type="submit" class="btn btn-success btn-lg mt-4" form="formRegister">
+                    <i class="bi bi-check-circle buttonNotItalic"> Salvar</i>
+                </button>
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>

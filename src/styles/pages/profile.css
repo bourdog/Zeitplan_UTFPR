@@ -1,0 +1,57 @@
+.titlePage {
+    align-items: flex-end;
+    justify-content: space-evenly;
+    margin: 1rem;
+    width: 100%;
+    border-bottom: 1px solid rgb(209, 209, 209);
+    font-size: 1.5rem;
+    color: #6c757d;
+}
+
+.formProfile {
+    width: 100%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    animation: fadeEffect 1s;
+}
+
+.formProfile input {
+    width: 25rem;
+}
+
+#visualizar {
+    margin: 2rem auto;
+    animation: fadeEffect 1s;
+}
+/* TabSelection */
+#DefaultTab {
+    color: #6c757d;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    padding: 0 1rem;
+    transition: 0.3s;
+}
+
+#DefaultTab:hover {
+    opacity: 0.4;
+}
+
+#DefaultTab:active {
+    outline: none;
+}
+
+.titlePage button.active {
+    opacity: 0.7;
+    outline: none;
+}
+
+.tabcontent {
+    display: none;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+/* /TabSelection */

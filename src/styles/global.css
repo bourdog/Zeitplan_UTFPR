@@ -33,6 +33,10 @@ header .navbar-inverse{
     margin-right: 55%;
 }
 
+.buttonNotItalic {
+    font-style: normal !important;
+}
+
 @media (max-width: 768px) {
     #navbarLogo {
         margin-left: 2rem;
