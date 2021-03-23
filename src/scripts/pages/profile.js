@@ -1,26 +1,14 @@
 document.getElementById('DefaultTab').click();
 
-function openTab(evt, tab) {
-    var i, tabcontent, tablinks;
+function openTab(tab) {
+    var tabContent = document.getElementsByClassName("tabContent");
 
-    tabcontent = document.getElementsByClassName("tabContent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    tablinks = document.getElementsByClassName("tabLink");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    for (var i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = "none";
     }
 
     document.getElementById(tab).style.display = "flex";
     document.getElementById(tab).style.flexDirection = "column";
-
-    evt.currentTarget.className += " active";
-}
-
-function howOlder(age){
-
 }
 
 function controlDateField () {
